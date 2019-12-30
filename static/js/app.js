@@ -1,39 +1,30 @@
-// Define Variable for Sample Names
+// Define Baseline Arrays for Sample Data
 var names = []
-
-// Import Sample Names from JSON File
-d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Analysis/master/data/samples.json").then(function(data) {
-  data["names"].forEach(item => names.push(item));
-});
-
-console.log(names)
-console.log(d3.length)
-
-// Define Variable for Sample MetaData
 var metadata = []
-
-// Import Sample MetaData from JSON File
-d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Analysis/master/data/samples.json").then(function(data) {
-  data["metadata"].forEach(item => metadata.push(item));
-});
-
-console.log(metadata)
-
-// Define Variable for Sample Information
 var information = []
-
-// Import Sample Information from JSON File
+  
+// Import Sample Data from JSON File
 d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Analysis/master/data/samples.json").then(function(data) {
-  data["samples"].forEach(item => information.push(item));
-});
+  
+  // Create Arrays of Sample Names/MetaData/Information
+  data["names"].forEach(item => names.push(item))
+  data["metadata"].forEach(item => metadata.push(item))
+  data["samples"].forEach(item => information.push(item))
 
-console.log(information)
+  var dropdown_list = document.getElementById("selDataset")
 
-var dropdown_list = document.getElementById("selDataset")
-
-for (var i = 0; i < names.length; i++) {
+  for (var i = 0; i < names.length; i++) {
     var option = document.createElement("option");
     option.value = names[i];
     option.text = names[i];
-    dropdown_list.appendChild(option);
-}
+    dropdown_list.appendChild(option);}
+
+  var data_panel = document.getElementById("sample-metadata")
+  
+  for (var i = 0; i < metadata.length; i++) {
+    if (names[0] === metadata[i].id) {console.log(metadata[i])}
+  }
+})
+
+function optionChanged(value) {
+  console.log(value)}
