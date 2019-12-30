@@ -58,9 +58,19 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       p7.appendChild(t7)
       data_panel.appendChild(p7)
 
-      var bar_x = information[i].sample_values
-      var bar_y = information[i].otu_ids
-      console.log(typeof information[i].sample_values)
+      var bar_values = information[i].sample_values
+      var bar_ids = information[i].otu_ids
+      var bar_labels = information[i].otu_labels
+
+      var bar_x = []
+      var bar_y = []
+      var bar_text = []
+
+      for (var j = 9; j > -1; j--) {
+        bar_x.push(bar_values[j])
+        bar_y.push("OTU " + bar_ids[j])
+        bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+      }
     }
   }
 
@@ -68,10 +78,29 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
     type: 'bar',
     x: bar_x,
     y: bar_y,
-    orientation: 'h'
-  }];
+    orientation: 'h',
+    mode: 'markers',
+    marker: {size: 16},
+    text: bar_text}];
+
+  var bar_layout = {
+    title: {
+      text:'Top 10 OTUs in Sample',
+      font: {size: 24}},
+    xaxis: {
+      title: {
+        text: 'OTU Count',
+        font: {size: 18}}},
+    autosize: false,
+    width: 500,
+    height: 500,
+    margin: {
+      l: 100,
+      r: 100,
+      b: 100,
+      t: 100}}
   
-  Plotly.newPlot('bar', bar_data)
+  Plotly.newPlot('bar', bar_data, bar_layout)
 })
 
 function optionChanged(value) {
@@ -115,4 +144,46 @@ function optionChanged(value) {
       var t7 = document.createTextNode("Wash Frequency: " + metadata[i].wfreq)
       p7.appendChild(t7)
       data_panel.appendChild(p7)
-    }}}
+      var bar_values = information[i].sample_values
+      var bar_ids = information[i].otu_ids
+      var bar_labels = information[i].otu_labels
+
+      var bar_x = []
+      var bar_y = []
+      var bar_text = []
+
+      for (var j = 9; j > -1; j--) {
+        bar_x.push(bar_values[j])
+        bar_y.push("OTU " + bar_ids[j])
+        bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+      }
+    }
+  }
+
+  var bar_data = [{
+    type: 'bar',
+    x: bar_x,
+    y: bar_y,
+    orientation: 'h',
+    mode: 'markers',
+    marker: {size: 16},
+    text: bar_text}];
+
+  var bar_layout = {
+    title: {
+      text:'Top 10 OTUs in Sample',
+      font: {size: 24}},
+    xaxis: {
+      title: {
+        text: 'OTU Count',
+        font: {size: 18}}},
+    autosize: false,
+    width: 500,
+    height: 500,
+    margin: {
+      l: 100,
+      r: 100,
+      b: 100,
+      t: 100}}
+  
+  Plotly.newPlot('bar', bar_data, bar_layout)}
