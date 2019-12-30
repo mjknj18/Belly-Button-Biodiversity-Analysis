@@ -7,6 +7,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
 });
 
 console.log(names)
+console.log(d3.length)
 
 // Define Variable for Sample MetaData
 var metadata = []
@@ -29,8 +30,6 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
 console.log(information)
 
 var dropdown_list = document.getElementById("selDataset")
-
-console.log(names[0])
 
 for (var i = 0; i < names.length; i++) {
     var option = document.createElement("option");
