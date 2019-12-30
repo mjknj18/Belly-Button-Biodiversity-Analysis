@@ -27,3 +27,14 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
 });
 
 console.log(information)
+
+var dropdown_list = document.getElementById("selDataset")
+
+console.log(names[0])
+
+for (var i = 0; i < names.length; i++) {
+    var option = document.createElement("option");
+    option.value = names[i];
+    option.text = names[i];
+    dropdown_list.appendChild(option);
+}
