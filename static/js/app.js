@@ -1,4 +1,4 @@
-// Define Baseline Arrays for Sample Data
+// Define Empty Arrays for Sample Data
 var names = []
 var metadata = []
 var information = []
@@ -11,16 +11,22 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
   data["metadata"].forEach(item => metadata.push(item))
   data["samples"].forEach(item => information.push(item))
 
+  // Set Variable for HTML Dropdown List
   var dropdown_list = document.getElementById("selDataset")
 
+  // Loop Through Sample Names
   for (var i = 0; i < names.length; i++) {
+    
+    // Create Option Tag for Each Sample Name & Append to Dropdwown List
     var option = document.createElement("option")
     option.value = names[i]
     option.text = names[i]
     dropdown_list.appendChild(option)}
 
+  // Set Variable for Sample Demographic Information Panel
   var data_panel = document.getElementById("sample-metadata")
 
+  // Loop Through MetaData for All Samples
   for (var i = 0; i < metadata.length; i++) {
     if (names[0] == metadata[i].id) {
       var p1 = document.createElement("p")
