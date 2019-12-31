@@ -345,6 +345,7 @@ function optionChanged(value) {
   // Connect Bar Chart to HTML Container & Display on Web Page
   Plotly.newPlot('bar', bar_data, bar_layout)
 
+  // Define Array for Bubble Chart Data Parameters
   var bubble_data = [{
     x: bubble_x,
     y: bubble_y,
@@ -354,6 +355,7 @@ function optionChanged(value) {
       color: bubble_color,
       size: bubble_size}}]
 
+  // Define Array for Bubble Chart Layout Parameters
   var bubble_layout = {
     title: {
       text:'All OTUs in Sample',
@@ -375,8 +377,10 @@ function optionChanged(value) {
       b: 100,
       t: 100}}
   
+  // Connect Bubble Chart to HTML Container & Display on Web Page
   Plotly.newPlot('bubble', bubble_data, bubble_layout)
 
+  // Define Array for Gauge Chart Data Parameters
   var gauge_data = [{
 		domain: {x: [0, 1], y: [0, 1]},
 		value: gauge_value,
@@ -385,6 +389,7 @@ function optionChanged(value) {
     mode: "gauge+number",
     gauge: {axis: {range: [null, 9]}}}]
 
+  // Define Array for Gauge Chart Layout Parameters
   var gauge_layout = {
     autosize: false,
     width: 500,
@@ -395,4 +400,5 @@ function optionChanged(value) {
       b: 100,
       t: 100}}
   
+  // Connect Gauge Chart to HTML Container & Display on Web Page
   Plotly.newPlot('gauge', gauge_data, gauge_layout)}
