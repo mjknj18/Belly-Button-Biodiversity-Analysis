@@ -297,6 +297,7 @@ function optionChanged(value) {
           bar_y.push("OTU " + bar_ids[j])
           bar_text.push(bar_labels[j].replace(/;/g, '</br>'))}}
 
+      // Define Variables for Selected Sample OTU Bubble Chart Data
       var bubble_x = information[i].otu_ids
       var bubble_y = information[i].sample_values
       var bubble_size = information[i].sample_values
@@ -304,14 +305,16 @@ function optionChanged(value) {
       var bubble_info = information[i].otu_labels
       var bubble_text = []
       
+      // Loop Through Bubble Chart OTU Labels
       for (var k = 0; k < bubble_info.length; k++){
-        bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))
-      }
 
-      var gauge_value = metadata[i].wfreq
-    }
-  }
+        // Append OTU Labels to New Array with Adjustments
+        bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))}
 
+      // Define Variable for Washing Frequency Gauge Chart Data
+      var gauge_value = metadata[i].wfreq}}
+
+  // Define Array for Bar Chart Data Parameters
   var bar_data = [{
     type: 'bar',
     x: bar_x,
@@ -321,6 +324,7 @@ function optionChanged(value) {
     marker: {size: 16},
     text: bar_text}];
 
+  // Define Array for Bar Chart Layout Parameters
   var bar_layout = {
     title: {
       text:'Top OTUs in Sample',
@@ -338,6 +342,7 @@ function optionChanged(value) {
       b: 100,
       t: 100}}
   
+  // Connect Bar Chart to HTML Container & Display on Web Page
   Plotly.newPlot('bar', bar_data, bar_layout)
 
   var bubble_data = [{
