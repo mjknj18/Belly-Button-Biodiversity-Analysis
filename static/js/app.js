@@ -119,10 +119,9 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
         bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))}
 
       // Define Variable for Washing Frequency Gauge Chart Data
-      var gauge_value = metadata[i].wfreq
-    }
-  }
+      var gauge_value = metadata[i].wfreq}}
 
+  // Define Array for Bar Chart Data Parameters
   var bar_data = [{
     type: 'bar',
     x: bar_x,
@@ -132,6 +131,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
     marker: {size: 16},
     text: bar_text}]
 
+  // Define Array for Bar Chart Layout Parameters
   var bar_layout = {
     title: {
       text:'Top OTUs in Sample',
@@ -149,8 +149,10 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       b: 100,
       t: 100}}
   
+  // Connect Bar Chart to HTML Container & Display on Web Page
   Plotly.newPlot('bar', bar_data, bar_layout)
 
+  // Define Array for Bubble Chart Data Parameters
   var bubble_data = [{
     x: bubble_x,
     y: bubble_y,
@@ -160,6 +162,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       color: bubble_color,
       size: bubble_size}}]
 
+  // Define Array for Bubble Chart Layout Parameters
   var bubble_layout = {
     title: {
       text:'All OTUs in Sample',
@@ -181,8 +184,10 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       b: 100,
       t: 100}}
   
+  // Connect Bubble Chart to HTML Container & Display on Web Page
   Plotly.newPlot('bubble', bubble_data, bubble_layout)
 
+  // Define Array for Gauge Chart Data Parameters
   var gauge_data = [{
 		domain: { x: [0, 1], y: [0, 1] },
 		value: gauge_value,
@@ -191,6 +196,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
     mode: "gauge+number",
     gauge: {axis: {range: [null, 9]}}}]
 
+  // Define Array for Gauge Chart Layout Parameters
   var gauge_layout = {
     autosize: false,
     width: 500,
@@ -201,8 +207,8 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       b: 100,
       t: 100}}
   
-  Plotly.newPlot('gauge', gauge_data, gauge_layout)
-})
+  // Connect Gauge Chart to HTML Container & Display on Web Page
+  Plotly.newPlot('gauge', gauge_data, gauge_layout)})
 
 function optionChanged(value) {
   document.getElementById('sample-metadata').innerHTML = ""
