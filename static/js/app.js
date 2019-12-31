@@ -145,7 +145,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
         font: {size: 18}}},
     autosize: false,
     width: 1250,
-    height: 500,
+    height: 1250,
     margin: {
       l: 100,
       r: 100,
@@ -218,6 +218,17 @@ function optionChanged(value) {
           bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
         }
       }
+
+      var bubble_x = information[i].otu_ids
+      var bubble_y = information[i].sample_values
+      var bubble_size = information[i].sample_values
+      var bubble_color = information[i].otu_ids
+      var bubble_info = information[i].otu_labels
+      var bubble_text = []
+      
+      for (var k = 0; k < bubble_info.length; k++){
+        bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))
+      }
     }
   }
 
@@ -247,4 +258,36 @@ function optionChanged(value) {
       b: 100,
       t: 100}}
   
-  Plotly.newPlot('bar', bar_data, bar_layout)}
+  Plotly.newPlot('bar', bar_data, bar_layout)
+
+  var bubble_data = [{
+    x: bubble_x,
+    y: bubble_y,
+    text: bubble_text,
+    mode: 'markers',
+    marker: {
+      color: bubble_color,
+      size: bubble_size}}]
+
+  var bubble_layout = {
+    title: {
+      text:'All OTUs in Sample',
+      font: {size: 24}},
+    xaxis: {
+      title: {
+        text: 'OTU ID',
+        font: {size: 18}}},
+    yaxis: {
+      title: {
+        text: 'OTU Count',
+        font: {size: 18}}},
+    autosize: false,
+    width: 1250,
+    height: 1250,
+    margin: {
+      l: 100,
+      r: 100,
+      b: 100,
+      t: 100}}
+  
+  Plotly.newPlot('bubble', bubble_data, bubble_layout)}
