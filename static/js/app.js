@@ -23,7 +23,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
     option.text = names[i]
     dropdown_list.appendChild(option)}
 
-  // Defone Variable for Sample Demographic Information Panel
+  // Define Variable for Sample Demographic Information Panel
   var data_panel = document.getElementById("sample-metadata")
 
   // Loop Through MetaData for All Samples
@@ -210,47 +210,63 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
   // Connect Gauge Chart to HTML Container & Display on Web Page
   Plotly.newPlot('gauge', gauge_data, gauge_layout)})
 
+// Define Function for Change in Selected Sample
 function optionChanged(value) {
+
+  // Clear HTML Tags in Sample Demographic Information Panel
   document.getElementById('sample-metadata').innerHTML = ""
 
+  // Define Variable for Sample Demographic Information Panel
   var data_panel = document.getElementById("sample-metadata")
   
+  // Loop Through MetaData from All Samples
   for (var i = 0; i < metadata.length; i++) {
+
+    // Set Condition for MetaData from the Selected Sample
     if (value == metadata[i].id) {
+
+      // Create Paragragh Tag for ID Number & Append to Panel
       var p1 = document.createElement("p")
       var t1 = document.createTextNode("ID Number: " + metadata[i].id)
       p1.appendChild(t1)
       data_panel.appendChild(p1)
 
+      // Create Paragragh Tag for Ethnicity & Append to Panel
       var p2 = document.createElement("p")
       var t2 = document.createTextNode("Ethnicity: " + metadata[i].ethnicity)
       p2.appendChild(t2)
       data_panel.appendChild(p2)
 
+      // Create Paragraph Tag for Gender & Append to Panel
       var p3 = document.createElement("p")
       var t3 = document.createTextNode("Gender: " + metadata[i].gender)
       p3.appendChild(t3)
       data_panel.appendChild(p3)
 
+      // Create Paragraph Tag for Age & Append to Panel
       var p4 = document.createElement("p")
       var t4 = document.createTextNode("Age: " + metadata[i].age)
       p4.appendChild(t4)
       data_panel.appendChild(p4)
 
+      // Create Paragraph Tag for Location & Append to Panel
       var p5 = document.createElement("p")
       var t5 = document.createTextNode("Location: " + metadata[i].location)
       p5.appendChild(t5)
       data_panel.appendChild(p5)
 
+      // Create Paragraph Tag for Bully Button Type & Append to Panel
       var p6 = document.createElement("p")
       var t6 = document.createTextNode("Belly Button Type: " + metadata[i].bbtype)
       p6.appendChild(t6)
       data_panel.appendChild(p6)
 
+      // Create Paragraph Tag for Wash Frequency & Append to Panel
       var p7 = document.createElement("p")
       var t7 = document.createTextNode("Wash Frequency: " + metadata[i].wfreq)
       p7.appendChild(t7)
       data_panel.appendChild(p7)
+
       var bar_values = information[i].sample_values
       var bar_ids = information[i].otu_ids
       var bar_labels = information[i].otu_labels
