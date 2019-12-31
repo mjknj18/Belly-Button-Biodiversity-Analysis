@@ -94,7 +94,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
 
   var bar_layout = {
     title: {
-      text:'Top 10 OTUs in Sample',
+      text:'Top OTUs in Sample',
       font: {size: 24}},
     xaxis: {
       title: {
@@ -189,7 +189,7 @@ function optionChanged(value) {
 
   var bar_layout = {
     title: {
-      text:'Top 10 OTUs in Sample',
+      text:'Top OTUs in Sample',
       font: {size: 24}},
     xaxis: {
       title: {
