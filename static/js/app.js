@@ -11,7 +11,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
   data["metadata"].forEach(item => metadata.push(item))
   data["samples"].forEach(item => information.push(item))
 
-  // Set Variable for HTML Dropdown List
+  // Define Variable for HTML Dropdown List
   var dropdown_list = document.getElementById("selDataset")
 
   // Loop Through Sample Names
@@ -23,13 +23,13 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
     option.text = names[i]
     dropdown_list.appendChild(option)}
 
-  // Set Variable for Sample Demographic Information Panel
+  // Defone Variable for Sample Demographic Information Panel
   var data_panel = document.getElementById("sample-metadata")
 
   // Loop Through MetaData for All Samples
   for (var i = 0; i < metadata.length; i++) {
 
-    // Find MetaData for First Sample
+    // Set Condition for MetaData from the First Sample
     if (names[0] == metadata[i].id) {
 
       // Create Paragragh Tag for ID Number & Append to Panel
@@ -74,15 +74,20 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       p7.appendChild(t7)
       data_panel.appendChild(p7)
 
+      // Define Variables for First Sample OTU Data
       var bar_values = information[i].sample_values
       var bar_ids = information[i].otu_ids
       var bar_labels = information[i].otu_labels
 
+      // Create Blank Arrays for Bar Graph Data
       var bar_x = []
       var bar_y = []
       var bar_text = []
 
+      // Set Condition for Ten or Fewer OTU's in the First Sample
       if (bar_ids.length <= 10) {
+
+        // 
         for (var j = bar_ids.length - 1; j > -1; j--) {
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
