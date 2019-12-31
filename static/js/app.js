@@ -66,10 +66,19 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       var bar_y = []
       var bar_text = []
 
-      for (var j = 9; j > -1; j--) {
-        bar_x.push(bar_values[j])
-        bar_y.push("OTU " + bar_ids[j])
-        bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+      if (bar_ids.length <= 10) {
+        for (var j = bar_ids.length - 1; j > -1; j--) {
+          bar_x.push(bar_values[j])
+          bar_y.push("OTU " + bar_ids[j])
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+        }
+      }
+      else {
+        for (var j = 9; j > -1; j--) {
+          bar_x.push(bar_values[j])
+          bar_y.push("OTU " + bar_ids[j])
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+        }
       }
     }
   }
@@ -152,10 +161,19 @@ function optionChanged(value) {
       var bar_y = []
       var bar_text = []
 
-      for (var j = 9; j > -1; j--) {
-        bar_x.push(bar_values[j])
-        bar_y.push("OTU " + bar_ids[j])
-        bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+      if (bar_ids.length <= 10) {
+        for (var j = bar_ids.length - 1; j > -1; j--) {
+          bar_x.push(bar_values[j])
+          bar_y.push("OTU " + bar_ids[j])
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+        }
+      }
+      else {
+        for (var j = 9; j > -1; j--) {
+          bar_x.push(bar_values[j])
+          bar_y.push("OTU " + bar_ids[j])
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
+        }
       }
     }
   }
