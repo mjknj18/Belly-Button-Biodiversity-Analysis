@@ -91,6 +91,8 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       for (var k = 0; k < bubble_info.length; k++){
         bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))
       }
+
+      var gauge_value = metadata[i].wfreq
     }
   }
 
@@ -153,6 +155,26 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       t: 100}}
   
   Plotly.newPlot('bubble', bubble_data, bubble_layout)
+
+  var gauge_data = [{
+		domain: { x: [0, 1], y: [0, 1] },
+		value: gauge_value,
+		title: { text: "Sample Washing Frequency", font: { size: 24 }},
+		type: "indicator",
+    mode: "gauge+number",
+    gauge: {axis: {range: [null, 9]}}}]
+
+  var gauge_layout = {
+    autosize: false,
+    width: 500,
+    height: 500,
+    margin: {
+      l: 100,
+      r: 100,
+      b: 100,
+      t: 100}}
+  
+  Plotly.newPlot('gauge', gauge_data, gauge_layout)
 })
 
 function optionChanged(value) {
@@ -229,6 +251,8 @@ function optionChanged(value) {
       for (var k = 0; k < bubble_info.length; k++){
         bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))
       }
+
+      var gauge_value = metadata[i].wfreq
     }
   }
 
@@ -290,4 +314,24 @@ function optionChanged(value) {
       b: 100,
       t: 100}}
   
-  Plotly.newPlot('bubble', bubble_data, bubble_layout)}
+  Plotly.newPlot('bubble', bubble_data, bubble_layout)
+
+  var gauge_data = [{
+		domain: {x: [0, 1], y: [0, 1]},
+		value: gauge_value,
+		title: {text: "Sample Washing Frequency", font: { size: 24}},
+		type: "indicator",
+    mode: "gauge+number",
+    gauge: {axis: {range: [null, 9]}}}]
+
+  var gauge_layout = {
+    autosize: false,
+    width: 500,
+    height: 500,
+    margin: {
+      l: 100,
+      r: 100,
+      b: 100,
+      t: 100}}
+  
+  Plotly.newPlot('gauge', gauge_data, gauge_layout)}
