@@ -87,15 +87,21 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       // Set Condition for Ten or Fewer OTU's in the First Sample
       if (bar_ids.length <= 10) {
 
-        // 
+        // Loop Through All OTU Data for the First Sample
         for (var j = bar_ids.length - 1; j > -1; j--) {
+          
+          // Append OTU Data to Appropriate Bar Graph Arrays
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
           bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
         }
       }
       else {
+
+        // Loop Through First Ten Items of OTU Data for the First Sample
         for (var j = 9; j > -1; j--) {
+
+          // Append OTU Data to Appropriate Bar Graph Arrays
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
           bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
