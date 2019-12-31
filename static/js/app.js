@@ -74,7 +74,7 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       p7.appendChild(t7)
       data_panel.appendChild(p7)
 
-      // Define Variables for First Sample OTU Data
+      // Define Variables for First Sample OTU Bar Graph Data
       var bar_values = information[i].sample_values
       var bar_ids = information[i].otu_ids
       var bar_labels = information[i].otu_labels
@@ -93,21 +93,18 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
           // Append OTU Data to Appropriate Bar Graph Arrays
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
-          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
-        }
-      }
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))}}
       else {
 
         // Loop Through First Ten Items of OTU Data for the First Sample
         for (var j = 9; j > -1; j--) {
 
-          // Append OTU Data to Appropriate Bar Graph Arrays
+          // Append OTU Data to Appropriate Bar Graph Arrays with Appropriate Adjustments
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
-          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
-        }
-      }
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))}}
 
+      // Define Variables for First Sample OTU Bubble Chart Data
       var bubble_x = information[i].otu_ids
       var bubble_y = information[i].sample_values
       var bubble_size = information[i].sample_values
@@ -115,10 +112,13 @@ d3.json("https://raw.githubusercontent.com/mjknj18/Belly-Button-Biodiversity-Ana
       var bubble_info = information[i].otu_labels
       var bubble_text = []
       
+      // Loop Through Bubble Chart OTU Labels
       for (var k = 0; k < bubble_info.length; k++){
-        bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))
-      }
 
+        // Append OTU Labels to New Array with Adjustments
+        bubble_text.push(bubble_info[k].replace(/;/g, '</br>'))}
+
+      // Define Variable for Washing Frequency Gauge Chart Data
       var gauge_value = metadata[i].wfreq
     }
   }
