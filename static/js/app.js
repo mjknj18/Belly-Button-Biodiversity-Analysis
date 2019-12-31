@@ -267,28 +267,35 @@ function optionChanged(value) {
       p7.appendChild(t7)
       data_panel.appendChild(p7)
 
+      // Define Variables for Selected Sample OTU Bar Graph Data
       var bar_values = information[i].sample_values
       var bar_ids = information[i].otu_ids
       var bar_labels = information[i].otu_labels
 
+      // Create Blank Arrays for Bar Graph Data
       var bar_x = []
       var bar_y = []
       var bar_text = []
 
+      // Set Condition for Ten or Fewer OTU's in the Selected Sample
       if (bar_ids.length <= 10) {
+        
+        // Loop Through All OTU Data for the Selected Sample
         for (var j = bar_ids.length - 1; j > -1; j--) {
+          
+          // Append OTU Data to Appropriate Bar Graph Arrays
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
-          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
-        }
-      }
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))}}
       else {
+
+        // Loop Through First Ten Items of OTU Data for the Selected Sample
         for (var j = 9; j > -1; j--) {
+
+          // Append OTU Data to Appropriate Bar Graph Arrays with Appropriate Adjustments
           bar_x.push(bar_values[j])
           bar_y.push("OTU " + bar_ids[j])
-          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))
-        }
-      }
+          bar_text.push(bar_labels[j].replace(/;/g, '</br>'))}}
 
       var bubble_x = information[i].otu_ids
       var bubble_y = information[i].sample_values
