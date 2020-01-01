@@ -16,7 +16,7 @@ The goal of this project was to use JavaScript to present interactive visualizat
 ## Tasks
 
 1. Import the belly button sample data from the JSON file.
-2. Extract the sample ID numbers and append each one to the HTML dropdown menu container.
+2. Extract each sample ID number and append it to the HTML dropdown menu container.
 3. Extract and process the demographic information and OTU data for the first sample.
 4. Append demographic information for the first sample to the appropriate HTML container.
 5. Create a bar chart of the top ten OTUs by concentration in the first sample and connect it to the appropriate HTML container.
