@@ -1,6 +1,6 @@
 # Belly-Button-Biodiversity-Analysis
 
-The goal of this project was to use JavaScript to present interactive visualizations of Belly Button Biodiversity Data within a web page. Since the baseline data was provided in the form of a JSON array, D3 was used to import and process the data, while Plotly was used to generate the required visualizations.
+The goal of this project was to use JavaScript to present interactive visualizations of belly button biodiversity data within a web page. Since the baseline data was provided in JSON format, D3 was used to import and process the data, while Plotly was used to generate the required visualizations.
 
 ## Questions
 
