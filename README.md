@@ -23,7 +23,7 @@ The goal of this project was to use JavaScript to present interactive visualizat
 6. Generate a bubble chart of the concentrations of all of the OTUs in the first sample and connect it to the appropriate HTML container.
 7. Generate a gauge chart of the weekly wash frequency of the first sample and connect it to the appropriate HTML container.
 8. Create a function to monitor and extract the currently selected sample ID number from the HTML dropdown menu.
-9. Repeat steps three through seven for the currently selected sample.
+9. Repeat steps three through seven for the currently selected sample ID number.
 
 ## Results
 
