@@ -4,10 +4,10 @@ The goal of this project was to use JavaScript to present interactive visualizat
 
 ## Questions
 
-1. What is the demographic information of the individual associated with a specific belly button sample?
-2. What are the top ten Operational Taxonomic Units (OTUs) by concentration in a specific belly button sample?
-3. What are the concentrations of all the Operational Taxonomic Units (OTUs) in a specific belly button sample?
-4. What is the weekly wash frequency of a specific belly button sample?
+1. What is the demographic information of the individual associated with each specific belly button sample?
+2. What are the top ten Operational Taxonomic Units (OTUs) by concentration in each specific belly button sample?
+3. What are the concentrations of all the Operational Taxonomic Units (OTUs) in each specific belly button sample?
+4. What is the weekly wash frequency of each specific belly button sample?
 
 ## Datasets
 
@@ -16,8 +16,8 @@ The goal of this project was to use JavaScript to present interactive visualizat
 ## Tasks
 
 1. Import the belly button sample data from the JSON file.
-2. Extract the sample ID numbers and append them to the HTML dropdown menu container.
-3. Extract the demographic information & OTU data for the first sample.
+2. Extract the sample ID numbers and append each one to the HTML dropdown menu container.
+3. Extract and process the demographic information and OTU data for the first sample.
 4. Append demographic information for the first sample to the appropriate HTML container.
 5. Create a bar chart of the top ten OTUs by concentration in the first sample and connect it to the appropriate HTML container.
 6. Create a bubble chart of the concentrations of all of the OTUs in the first sample and connect it to the appropriate HTML container.
