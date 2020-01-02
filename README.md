@@ -27,4 +27,4 @@ The goal of this project was to use JavaScript to present interactive visualizat
 
 ## Results
 
-1. https://github.com/mjknj18/Belly-Button-Biodiversity-Analysis/blob/master/index.html (Run this file in a browser.)
+1. https://mjknj18.github.io/
